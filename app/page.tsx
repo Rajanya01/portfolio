@@ -1424,7 +1424,7 @@ export default function Portfolio() {
                   title: "EduNova",
                   description:
                     "An educational platform for interactive learning experiences, quizzes, and resources.",
-                  tech: ["React", "Node.js", "TypeScript", "MongoDB"],
+                  tech: ["React", "Next.js", "TypeScript", "MongoDB"],
                   image: "https://i.postimg.cc/nL7ytg8C/Screenshot-2025-06-05-213357.png",
                   status: "Planning",
                   imageWidth: Fullscreen,
