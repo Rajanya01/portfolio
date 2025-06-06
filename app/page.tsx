@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
-import { X, Menu, Code, Layers, Server, Gamepad2, Zap, Terminal, ArrowRight, ExternalLink, Github, Sparkles, Calendar, BookOpen, Monitor, Database, Smartphone, Trophy, Users, Star, Linkedin, Mail, Fullscreen } from "lucide-react";
+import { X, Menu, Code, Layers, Server, Gamepad2, Zap, Terminal, ArrowRight, ExternalLink, Github, Sparkles, Calendar, BookOpen, Monitor, Database, Smartphone, Trophy, Users, Star, Linkedin, Mail, Fullscreen, MessageSquareText } from "lucide-react";
 import { code } from "framer-motion/client";
 
 // Animated Background Component - Reduced Particles
@@ -717,8 +717,8 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
                 rel={project.link.startsWith('http') ? "noopener noreferrer" : undefined}
                 variant="neon"
                 className="">
-                  Open {project.link.startsWith('http') ? 'Site' : ''}
-                </Button>
+                Open {project.link.startsWith('http') ? 'Site' : ''}
+              </Button>
             )}
           </div>
         </div>
@@ -798,39 +798,39 @@ type SkillCardProps = {
 const SkillCard: React.FC<SkillCardProps> = ({ skill, delay = 0 }) => {
   // Special handling for React's spin animation
   const isReact = skill.name === 'React';
-  
+
   // Determine skill category for hover effects
   const getSkillEffect = (name: string) => {
     const lowerName = name.toLowerCase();
-    
+
     if (['react', 'next', 'svelte', 'vue', 'angular'].some(tech => lowerName.includes(tech))) {
       return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(0,216,255,0.6)] transition-all duration-300 hover:rotate-3';
     }
-    
+
     if (['node', 'express', 'nest', 'django', 'flask', 'spring'].some(tech => lowerName.includes(tech))) {
       return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(0,255,0,0.6)] transition-all duration-300 hover:-rotate-3';
     }
-    
+
     if (['python', 'javascript', 'typescript', 'java', 'c++', 'c#'].some(tech => lowerName.includes(tech))) {
       return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,165,0,0.6)] transition-all duration-300 hover:translate-y-[-5px]';
     }
-    
+
     if (['mongo', 'postgres', 'mysql', 'sql', 'firebase'].some(tech => lowerName.includes(tech))) {
       return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,0,0.6)] transition-all duration-300 hover:skew-y-3';
     }
-    
+
     if (['git', 'docker', 'aws', 'azure', 'github', 'gitlab'].some(tech => lowerName.includes(tech))) {
       return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(100,149,237,0.6)] transition-all duration-300 hover:skew-x-3';
     }
-    
+
     // Default effect
     return 'hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(138,43,226,0.6)] transition-all duration-300';
   };
-  
+
   const baseClass = 'w-16 h-16 object-contain';
   const effectClass = getSkillEffect(skill.name);
   const imgClass = `${baseClass} ${effectClass} ${skill.className || ''} ${isReact ? 'animate-spin-slow' : ''}`;
-  
+
   return (
     <motion.div
       className="flex flex-col items-center group"
@@ -934,7 +934,7 @@ export default function Portfolio() {
     { name: "C" },
   ];
   const frameworks = [
-    { name: "React", className: "w-16 h-16 animate-spin" }, 
+    { name: "React", className: "w-16 h-16 animate-spin" },
     { name: "Next.js", className: "w-24 h-16 invert" },
     { name: "Tailwind", className: "w-20 h-20" },
     { name: "Unity", className: "w-32 h-28 invert" },
@@ -1049,13 +1049,10 @@ export default function Portfolio() {
                     }}
                     transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                   >
-                    <span className="text-5xl font-bold font-orbitron bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-                      RR
-                    </span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-green-400/20"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                    <img 
+                      src="https://i.postimg.cc/mZKt9VmY/bubi-profile.png" 
+                      alt="Profile Picture" 
+                      className="w-full h-full object-cover rounded-full"
                     />
                   </motion.div>
                   {[...Array(3)].map((_, i) => (
@@ -1090,7 +1087,7 @@ export default function Portfolio() {
                 className="space-y-4"
               >
                 <TypewriterText
-                  texts={["Web Developer", "Game Developer", "Creative Coder", "Tech Enthusiast"]}
+                  texts={["Game Developer", "Web Developer", "Creative Coder", "Tech Enthusiast"]}
                   className="text-2xl md:text-4xl text-gray-300 font-medium font-poppins"
                 />
                 <motion.p
@@ -1111,7 +1108,7 @@ export default function Portfolio() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 }}
-                className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8"
               >
                 Passionate full-stack developer crafting interactive experiences from dynamic websites to immersive
                 games. Driven by creativity, innovation, and cutting-edge technology.
@@ -1120,11 +1117,15 @@ export default function Portfolio() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5 }}
-                className="flex flex-wrap justify-center gap-4 mt-8"
+                className="w-full"
               >
-                <div className="flex flex-wrap gap-4">
-                  <Button href="#projects" size="lg" className="group px-6 py-3">
-                    <div className="flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 w-full max-w-2xl mx-auto px-4">
+                  <Button
+                    href="#projects"
+                    size="lg"
+                    className="group w-full sm:w-auto px-6 py-3 text-center justify-center"
+                  >
+                    <div className="flex items-center justify-center gap-2">
                       <span className="whitespace-nowrap">View Projects</span>
                       <motion.span
                         className="flex items-center h-5"
@@ -1135,15 +1136,20 @@ export default function Portfolio() {
                       </motion.span>
                     </div>
                   </Button>
-                  <Button href="#contact" variant="neon" size="lg" className="group px-6 py-3">
-                    <div className="flex items-center gap-2">
+                  <Button
+                    href="#contact"
+                    variant="neon"
+                    size="lg"
+                    className="group w-full sm:w-auto px-6 py-3 text-center justify-center"
+                  >
+                    <div className="flex items-center justify-center gap-2">
                       <span className="whitespace-nowrap">Get In Touch</span>
                       <motion.span
                         className="flex items-center h-5"
                         animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
                       >
-                        <ArrowRight className="h-5 w-5" />
+                        <MessageSquareText className="h-5 w-5" />
                       </motion.span>
                     </div>
                   </Button>
@@ -1410,7 +1416,7 @@ export default function Portfolio() {
                   imageHeight: Fullscreen,
                 },
                 {
-                  title: "Coming Soon!!!",
+                  title: "Horror Game",
                   description:
                     "A horror game project featuring immersive environments, interactive gameplay.",
                   tech: ["Unity", "C#", "Blender"],
