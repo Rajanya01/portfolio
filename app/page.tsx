@@ -1475,7 +1475,7 @@ export default function Portfolio() {
                   icon: Trophy,
                   title: "Hackathon Participant",
                   description: "Hello World Hacks",
-                  year: "2024",
+                  year: "2025",
                 },
                 {
                   icon: Code,
