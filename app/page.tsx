@@ -1223,7 +1223,7 @@ export default function Portfolio() {
                   {[
                     { icon: Gamepad2, name: "Game Making", desc: "Creating immersive experiences" },
                     { icon: Code, name: "Web Development", desc: "Building dynamic applications" },
-                    { icon: BookOpen, name: "UI/UX Designer", desc: "Crafting compelling narratives" },
+                    { icon: BookOpen, name: "UI/UX Designer", desc: "Creative, intuitive, analytical." },
                   ].map((passion, index) => (
                     <motion.div
                       key={passion.name}
